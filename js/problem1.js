@@ -4,11 +4,17 @@
  Problem 1
 
  Background:
- India has a kite flying/fighting tradition. Each kite is tied to a thread that has ground glass rubbed onto it. This means one kite can cut another kite's thread, leaving the losing kite drifting down for someone to catch. When a kite fight starts, everyone shouts "Peche!", and when a kite wins, they shout "Ipo kaate!"
+ India has a kite flying/fighting tradition. Each kite is tied to a thread that has ground glass rubbed 
+ onto it. This means one kite can cut another kite's thread, leaving the losing kite drifting down for 
+ someone to catch. When a kite fight starts, everyone shouts "Peche!", and when a kite wins, they shout 
+ "Ipo kaate!"
  http://fighterkitecentral.com/pdfs/KitesinIndia.pdf
 
  Problem statement:
- We will assume that every 3rd kite that flies will end up starting a kite fight, every 5th kite ends up losing a kite fight. So print the numbers from 1 to 100; but for multiples of 3, print "Peche!" instead of the number; and for multiples of 5, print "Ipo kaate!"; and for numbers which are multiples of both 3 and 5, print "Peche! Ipo kaate!"
+ We will assume that every 3rd kite that flies will end up starting a kite fight, every 5th kite ends up 
+ losing a kite fight. So print the numbers from 1 to 100; but for multiples of 3, print "Peche!" instead 
+ of the number; and for multiples of 5, print "Ipo kaate!"; and for numbers which are multiples of both 3 
+ and 5, print "Peche! Ipo kaate!"
 
  Examples:
  Given there are 100 kites
@@ -29,6 +35,20 @@ function kiteGame(numberOfKites) {
     var answer = "";
 
     // write some code here!
+    for (var i = 1; i <= numberOfKites; i++){
+        var printed = false;
+        if (i % 3 === 0){
+            answer += "Peche! ";
+            printed = true;
+        }
+        if (i % 5 === 0){
+            answer += "Ipo kaate! ";
+            printed = false;
+        }
+        if (!printed){
+            answer += i + " ";
+        }
+    }
 
     changeElementText("#answer", answer);
 }
