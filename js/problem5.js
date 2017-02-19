@@ -39,7 +39,8 @@ function changeElementText(element, answer) {
 }
 
 function correctAdvertisement(advert) {
-    if (advert.length >= 3){
+    // should really be 3 but just need to check for length 2 as urdu line access is hardcoded
+    if (advert.length >= 2){
         var given = "";
         var count = 0;
         var corrected = "";
@@ -53,10 +54,10 @@ function correctAdvertisement(advert) {
                 corrected += advert[i].join(" ") + " ";
             }
         }
-        //originalText
-        //correctedText
-        //wordCount
-
+        // span ids:
+        //  originalText
+        //  correctedText
+        //  wordCount
         changeElementText("#originalText", given);
         changeElementText("#wordCount", count);
         changeElementText("#correctedText", corrected);

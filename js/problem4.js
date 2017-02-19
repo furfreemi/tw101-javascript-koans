@@ -32,10 +32,15 @@ function changeElementText(element, answer) {
     $(element).text(answer);
 }
 
-function calculateCurrencyTotal(notes) {
+function calculateCurrencyTotal() {
     var total = 0;
-    var noteList = "";
-    
+    var noteList = Array.prototype.slice.call(arguments).join(", ");
+    var i = 0;
+
+    while (i < arguments.length && isValidCurrency(arguments[i])){
+        total += arguments[i];
+        i++;
+    }
     
     changeElementText("#moneyNotes", noteList);
     changeElementText("#moneyTotal", total);
