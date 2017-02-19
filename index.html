@@ -1,4 +1,9 @@
 <html>
+    <style>
+        .tabbed {
+            padding-left:30px;
+        }
+    </style>
     <body>
         <script src="js/vendor/jquery-2.1.1.js"></script>
         <script src="js/problem1.js"></script>
@@ -27,9 +32,30 @@
         <div><span>Then the total fare is Rs </span><span id="fare"></span></div>
         <br>
         <div>Problem 4</div>
-        <div>Your problem 4 html goes here</div>
+        <!--
+        Given Rs 10, 20, 100 notes
+        When I count the money
+        Then my total is Rs 130
+        -->
+        <div><span>Given Rs </span><span id="moneyNotes"></span></div>
+        <div><span>When I count the money</span></div>
+        <div><span>Then my total is Rs </span><span id = "moneyTotal"></span></div>
         <br>
         <div>Problem 5</div>
-        <div>Your problem 5 html goes here</div>
+        <div><span>Given an advertising text:</span></div>
+        <div class ="tabbed" id = "originalText"></div>
+        <div><span>When I correct the text<br>Then the result should be:</span></div>
+        <div class ="tabbed"><span id = "correctedText"></span></div>
+        <div class ="tabbed"><span>count: </span><span id = "wordCount"></span></div>
+        <!--
+          Given an advertising text:
+             zara dhyaan dein
+             mazarat chahenge
+             attention please
+          When I correct the text
+          Then the result should be:
+             zara dhyaan dein chahenge mazarat attention please
+             count: 7
+        -->
     </body>
 </html>
