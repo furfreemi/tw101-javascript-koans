@@ -38,6 +38,10 @@ function changeElementText(element, answer) {
     $(element).text(answer);
 }
 
+function changeElementHTML(element, answer) {
+    document.getElementById(element).innerHTML = answer;
+}
+
 function correctAdvertisement(advert) {
     // should really be 3 but just need to check for length 2 as urdu line access is hardcoded
     if (advert.length >= 2){
@@ -46,7 +50,8 @@ function correctAdvertisement(advert) {
         var corrected = "";
 
         for (var i = 0; i < advert.length; i++){
-            given += advert[i].join(" ") + "\r\n";
+            // couldn't get new lines to work without using html?
+            given += advert[i].join(" ") + "<br>";
             count += advert[i].length;
             if (i == 1){
                 corrected += advert[i].reverse().join(" ") + " ";
@@ -58,7 +63,7 @@ function correctAdvertisement(advert) {
         //  originalText
         //  correctedText
         //  wordCount
-        changeElementText("#originalText", given);
+        changeElementHTML("originalText", given);
         changeElementText("#wordCount", count);
         changeElementText("#correctedText", corrected);
     }
