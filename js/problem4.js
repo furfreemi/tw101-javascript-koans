@@ -20,10 +20,29 @@
  When I count the money
  Then my total is Rs 130
 
- Given Rs 20, 50, 10, 20, 13, 500 notes
- When I count the money
- Then my total is Rs 100
+ Given Rs 20, 50, 10, 20, 13, 500 notes //moneyNotes
+ When I count the money 
+ Then my total is Rs 100 //moneyTotal
 
 */
 
 // Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function calculateCurrencyTotal(notes) {
+    var total = 0;
+    var noteList = "";
+    
+    
+    changeElementText("#moneyNotes", noteList);
+    changeElementText("#moneyTotal", total);
+
+    function isValidCurrency(note){
+        return note == 5 || note == 10 || note == 20 || note == 50 || note == 100 || note == 500 || note == 1000;
+    }
+
+}
+

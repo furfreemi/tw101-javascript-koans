@@ -34,3 +34,31 @@
  */
 
 // Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function correctAdvertisement(advert) {
+    if (advert.length >= 3){
+        var given = "";
+        var count = 0;
+        var corrected = "";
+
+        for (var i = 0; i < advert.length; i++){
+            given += advert[i].join(" ") + "\r\n";
+            count += advert[i].length;
+            if (i == 1){
+                corrected += advert[i].reverse().join(" ") + " ";
+            } else {
+                corrected += advert[i].join(" ") + " ";
+            }
+        }
+        //originalText
+        //correctedText
+        //wordCount
+
+        changeElementText("#originalText", given);
+        changeElementText("#wordCount", count);
+        changeElementText("#correctedText", corrected);
+    }
+}
